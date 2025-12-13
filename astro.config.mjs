@@ -1,6 +1,6 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro';
 
 export default defineConfig({
   site: 'https://gillist.com',
-  output: 'static'
+  base: '/',
 });
