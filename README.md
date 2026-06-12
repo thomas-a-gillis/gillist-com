@@ -1,5 +1,5 @@
-﻿# gillist.com
+# gillist.com
 
-Personal site for Thomas A. Gillis.  
-Focus: offensive security research, adversary simulation, and analytical lab work.  
-This repository tracks the site source and public-facing artifacts.
+Personal site for Koba (Thomas A. Gillis) - AI Systems, Privacy, and Practical Workflows.
+
+Single-page static site with dark/light mode toggle.

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koba | AI Systems & Practical Workflows</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --text: #e0e0e0;
+            --accent: #00ff9d;
+            --card-bg: #111;
+            --border: #333;
+        }
+        
+        [data-theme="light"] {
+            --bg: #f8f9fa;
+            --text: #212529;
+            --accent: #00b36b;
+            --card-bg: #ffffff;
+            --border: #dee2e6;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        header {
+            background: linear-gradient(180deg, #1a1a1a, #000);
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        [data-theme="light"] header {
+            background: linear-gradient(180deg, #e9ecef, #f8f9fa);
+        }
+        
+        .hero h1 {
+            font-size: 3.8rem;
+            margin: 0 0 0.5rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        nav {
+            background: var(--card-bg);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            color: var(--accent);
+            font-size: 2.2rem;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.8rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 10px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: #000;
+            border-top: 1px solid var(--border);
+            color: #888;
+        }
+        
+        [data-theme="light"] footer {
+            background: #f1f3f5;
+            color: #666;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#labs">Labs & Projects</a></li>
+            <li><a href="#writing">Writing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="hero">
+            <h1>Koba</h1>
+            <p>AI Systems Builder • Privacy Tinkerer • Helpful to Life</p>
+            <p>Practical workflows, self-hosted tools, and clear thinking from diplomacy to AI.</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About</h2>
+        <div class="card">
+            <p>I'm an AI systems expert focused on building practical, low-effort tools that enhance clarity, agency, and daily life. With a background in international relations, diplomacy (former USAID/State Department roles in Europe-Eurasia), and hands-on technology tinkering, I bridge human systems and machine intelligence.</p>
+            <p>Current focus: Self-hosted LLMs, Obsidian knowledge graphs, privacy-hardened stacks (GL.iNet Slate 7, Surfshark, Pi-hole/AdGuard), multi-model workflows (Grok, Claude, Codex), and MCP integrations. Primary caregiver and family support role shapes my "helpful to life" philosophy.</p>
+        </div>
+    </section>
+
+    <section id="labs">
+        <h2>Labs & Projects</h2>
+        <div class="card">
+            <h3>AI Integrations & Workflows</h3>
+            <p>Custom GPTs and artifacts with Claude & Codex, Grok API experiments, Obsidian automation & sync, MCP SuperAssistant setups, and cross-platform PKM systems.</p>
+        </div>
+        <div class="card">
+            <h3>Privacy & Hardware Stacks</h3>
+            <p>Router-level VPN/proxy hardening, self-hosted AI on Linux Mint/Windows, device tinkering and repairs (Subaru, Samsung, etc.).</p>
+        </div>
+        <div class="card">
+            <h3>Ongoing Explorations</h3>
+            <p>CEH studies through an AI tooling lens, personal OS / Condition Red SOPs, Todoist positive patterns, and family support systems.</p>
+        </div>
+    </section>
+
+    <section id="writing">
+        <h2>Writing & Analysis</h2>
+        <div class="card">
+            <p>Geopolitics, history (Tuva/Tartaria interests), church history, AI ethics/power dynamics, and practical life optimizations. More posts coming soon.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="card">
+            <p>Email: <a href="mailto:gillist1@gmail.com">gillist1@gmail.com</a> (or Tom@GillisT.com)</p>
+            <p>Open to thoughtful collaborations on low-effort AI projects and tools.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Koba / gillist.com • Built with focus on clarity and utility.</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const toggleBtn = document.querySelector('.theme-toggle');
+            
+            if (currentTheme === 'light') {
+                body.removeAttribute('data-theme');
+                toggleBtn.textContent = '🌙';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.setAttribute('data-theme', 'light');
+                toggleBtn.textContent = '☀️';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        
+        // Load saved theme
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.setAttribute('data-theme', 'light');
+                document.querySelector('.theme-toggle').textContent = '☀️';
+            }
+        }
+    </script>
+</body>
+</html>
