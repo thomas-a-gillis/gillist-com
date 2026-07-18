@@ -1,0 +1,159 @@
+---
+// Quiet easter egg adapted from Koba's latest Cognitive Anchor artifact.
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A small private mindfulness pause from GillisT Enterprises." />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="referrer" content="no-referrer" />
+  <meta name="theme-color" content="#06110c" />
+  <title>A Small Anchor | GillisT</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/anchor.css" />
+</head>
+<body>
+  <main class="anchor-shell">
+    <nav class="anchor-nav" aria-label="Anchor navigation">
+      <a class="home-link" href="/">← Return to GillisT</a>
+      <span class="anchor-mark" aria-hidden="true">◌</span>
+    </nav>
+
+    <header class="intro">
+      <p class="kicker">A quiet easter egg</p>
+      <h1>A small anchor.</h1>
+      <p>Two unhurried minutes. Nothing to solve, prove, optimize, or score.</p>
+    </header>
+
+    <section class="anchor-card" aria-labelledby="breath-title">
+      <h2 id="breath-title">Follow one easy cycle</h2>
+      <p class="card-lede">Use the pace if it feels comfortable. Pause whenever you like.</p>
+      <div class="breath-stage">
+        <div class="breath-orb" id="breath-orb" data-phase="idle" aria-hidden="true">Here</div>
+        <div class="breath-meta" aria-live="polite">
+          <p class="breath-label" id="breath-label">Ready when you are</p>
+          <p class="breath-count" id="breath-count">No timer is running</p>
+        </div>
+        <button class="control" id="breath-control" type="button">Begin</button>
+      </div>
+    </section>
+
+    <section class="anchor-card" aria-labelledby="notice-title">
+      <h2 id="notice-title">Notice what is already here</h2>
+      <p class="card-lede">Tap each line when you have noticed it. There is no required order.</p>
+      <div class="notice-list">
+        <button class="notice" type="button" aria-pressed="false">
+          <span class="notice-number"><span>5</span></span>
+          <span>Five things you can see</span>
+        </button>
+        <button class="notice" type="button" aria-pressed="false">
+          <span class="notice-number"><span>4</span></span>
+          <span>Four points of physical contact</span>
+        </button>
+        <button class="notice" type="button" aria-pressed="false">
+          <span class="notice-number"><span>3</span></span>
+          <span>Three sounds, near or far</span>
+        </button>
+        <button class="notice" type="button" aria-pressed="false">
+          <span class="notice-number"><span>2</span></span>
+          <span>Two colors you had not noticed</span>
+        </button>
+        <button class="notice" type="button" aria-pressed="false">
+          <span class="notice-number"><span>1</span></span>
+          <span>One ordinary thing you appreciate</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="anchor-card" aria-labelledby="ordinary-title">
+      <h2 id="ordinary-title">One ordinary truth</h2>
+      <p class="card-lede">A plain sentence can be enough.</p>
+      <label class="ordinary-label" for="ordinary-input">What is simple and true right now?</label>
+      <input class="ordinary-input" id="ordinary-input" type="text" autocomplete="off" placeholder="For example: I am sitting by a window." />
+      <p class="privacy-note">This stays in your tab. Nothing is saved or sent.</p>
+    </section>
+
+    <p class="time-note">Right now: <time id="current-time"></time></p>
+    <p class="closing-note">Just a small pause—not a test, score, or diagnosis.</p>
+  </main>
+
+  <script>
+    const orb = document.getElementById("breath-orb");
+    const label = document.getElementById("breath-label");
+    const count = document.getElementById("breath-count");
+    const control = document.getElementById("breath-control");
+    const time = document.getElementById("current-time");
+
+    const phases = [
+      { key: "inhale", label: "Breathe in", seconds: 4 },
+      { key: "pause", label: "Pause softly", seconds: 2 },
+      { key: "exhale", label: "Breathe out", seconds: 6 },
+      { key: "rest", label: "Rest", seconds: 2 }
+    ];
+
+    let running = false;
+    let phaseIndex = 0;
+    let cycles = 0;
+    let phaseTimer;
+
+    function updateTime() {
+      const now = new Date();
+      time.dateTime = now.toISOString();
+      time.textContent = now.toLocaleString([], { dateStyle: "medium", timeStyle: "short" });
+    }
+
+    function runPhase() {
+      if (!running) return;
+      const phase = phases[phaseIndex];
+      orb.dataset.phase = phase.key;
+      orb.style.setProperty("--phase-duration", `${phase.seconds}s`);
+      orb.textContent = phase.label;
+      label.textContent = phase.label;
+      count.textContent = cycles ? `${cycles} gentle cycle${cycles === 1 ? "" : "s"} completed` : "Take only the pace that feels easy";
+      phaseTimer = window.setTimeout(() => {
+        phaseIndex = (phaseIndex + 1) % phases.length;
+        if (phaseIndex === 0) cycles += 1;
+        runPhase();
+      }, phase.seconds * 1000);
+    }
+
+    function stopBreathing() {
+      running = false;
+      window.clearTimeout(phaseTimer);
+      orb.dataset.phase = "idle";
+      orb.style.setProperty("--phase-duration", "0.8s");
+      orb.textContent = "Here";
+      label.textContent = "Paused";
+      count.textContent = cycles ? `${cycles} gentle cycle${cycles === 1 ? "" : "s"} completed` : "No timer is running";
+      control.textContent = "Begin";
+    }
+
+    control.addEventListener("click", () => {
+      if (running) {
+        stopBreathing();
+        return;
+      }
+      running = true;
+      control.textContent = "Pause";
+      runPhase();
+    });
+
+    document.querySelectorAll(".notice").forEach((button) => {
+      button.addEventListener("click", () => {
+        const done = button.getAttribute("aria-pressed") === "true";
+        button.setAttribute("aria-pressed", String(!done));
+        button.classList.toggle("is-done", !done);
+      });
+    });
+
+    updateTime();
+    window.setInterval(updateTime, 30000);
+  </script>
+</body>
+</html>

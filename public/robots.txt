@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /anchor/
+
+Sitemap: https://gillist.com/sitemap.xml
