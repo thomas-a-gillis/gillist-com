@@ -1,5 +1,8 @@
 ---
-// GillisT Enterprises public site
+const title = 'GillisT Enterprises | Applied AI & Strategic Advisory';
+const description = 'Applied AI development and evaluation, technical proposal review, and international technology advisory. Hands-on AI practice informed by diplomacy, procurement, and program delivery.';
+const year = new Date().getFullYear();
+const inquiry = 'mailto:inquiries@gillist.com?subject=Project%20inquiry%20%7C%20GillisT&body=Objective%3A%0A%0AMaterial%20or%20system%20to%20review%3A%0A%0APreferred%20timeframe%3A%0A';
 ---
 
 <!DOCTYPE html>
@@ -7,20 +10,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Independent B2B advisory for applied AI integration, strategic technology and geopolitical risk, and responsible human-AI research." />
+  <meta name="description" content={description} />
   <meta name="robots" content="index,follow" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="theme-color" content="#07140f" />
   <link rel="canonical" href="https://gillist.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gillist.com/" />
-  <meta property="og:title" content="GillisT Enterprises | Applied AI &amp; Strategic Advisory" />
-  <meta property="og:description" content="Practical AI integration, strategic technology and geopolitical risk, and responsible human-AI research." />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
   <meta property="og:site_name" content="GillisT Enterprises" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="GillisT Enterprises | Applied AI &amp; Strategic Advisory" />
-  <meta name="twitter:description" content="Practical AI integration, strategic technology and geopolitical risk, and responsible human-AI research." />
-  <title>GillisT Enterprises | Applied AI &amp; Strategic Advisory</title>
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <title>{title}</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,6 +31,7 @@
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#top">Skip to content</a>
   <div class="grain" aria-hidden="true"></div>
   <div class="glow glow-a" aria-hidden="true"></div>
   <div class="glow glow-b" aria-hidden="true"></div>
@@ -38,121 +42,163 @@
       <span class="brand-text">GillisT <em>Enterprises</em></span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="#work">Focus</a>
+      <a href="#work">Services</a>
+      <a href="#experience">Experience</a>
       <a href="#approach">Approach</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <p class="eyebrow">Applied AI · Strategic advisory · Cognitive research</p>
-      <h1>
-        Clarity for systems<br />
-        <span class="serif-accent">that do not stand still.</span>
-      </h1>
+  <main id="top" tabindex="-1">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">Applied AI · Program review · Strategic advisory</p>
+      <h1 id="hero-title">Applied AI.<br /><span class="serif-accent">Institutional judgment.</span></h1>
       <p class="lede">
-        GillisT Enterprises helps organizations integrate AI into real operations,
-        interpret strategic technology and geopolitical risk, and investigate the
-        human factors emerging around advanced models.
+        Build useful AI tools, assess how models reason, and examine whether proposals
+        and partnerships hold up in practice. Independent development and advisory
+        informed by experience in U.S. diplomacy, procurement, and program delivery.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#contact">Start a conversation</a>
-        <a class="btn btn-ghost" href="#work">What we explore</a>
+        <a class="btn btn-primary" href="#contact">Discuss a project</a>
+        <a class="btn btn-ghost" href="#work">Explore services</a>
       </div>
+      <p class="hero-credit">Led by Thomas A. Gillis <span aria-hidden="true">·</span> Former USAID Moldova Desk Officer</p>
     </section>
 
-    <section id="work" class="section">
+    <section id="work" class="section" aria-labelledby="services-title">
       <div class="section-head">
-        <h2>Focus areas</h2>
-        <p>Selected themes. Engagements are scoped privately and tailored to context.</p>
+        <p class="eyebrow">01 / Services</p>
+        <h2 id="services-title">A clear question. A defined engagement.</h2>
+        <p>For AI teams, consultancies, and organizations making consequential decisions about technology and programs.</p>
       </div>
       <div class="cards">
-        <article class="card">
-          <div class="card-index">01</div>
-          <h3>Applied AI integration</h3>
-          <p>
-            Workflow discovery, model evaluation, governance, and implementation
-            designed around useful outcomes—not demonstrations or theater.
-          </p>
+        <article class="card service-card">
+          <div class="card-index">EVALUATE</div>
+          <h3>Applied AI &amp; model evaluation</h3>
+          <p>Develop focused tools and prototypes, then examine how the models behind them behave. Test reasoning, assumptions, and reliability against realistic tasks.</p>
+          <ul class="service-details">
+            <li>Custom tools, prototypes, and workflows</li>
+            <li>Model comparison and evaluation design</li>
+            <li>Adversarial prompting and failure analysis</li>
+          </ul>
+          <p class="deliverable"><strong>Typical deliverables</strong>A working prototype or an evaluation with test cases and prioritized findings.</p>
+          <a class="text-link" href="mailto:research@gillist.com?subject=AI%20evaluation%20inquiry">Discuss an AI project <span aria-hidden="true">↗</span></a>
         </article>
-        <article class="card">
-          <div class="card-index">02</div>
-          <h3>Strategic &amp; geopolitical risk</h3>
-          <p>
-            Decision support where technology, institutions, and geopolitical
-            context meet—translated into clear operational choices.
-          </p>
+        <article class="card service-card">
+          <div class="card-index">REVIEW</div>
+          <h3>Technical proposal &amp; program review</h3>
+          <p>Test a proposal's logic, evidence, and feasibility against its requirements. Bring procurement and technical-evaluation experience to the review.</p>
+          <ul class="service-details">
+            <li>Requirements and technical approach</li>
+            <li>Implementation risks and assumptions</li>
+            <li>Monitoring and evaluation design</li>
+          </ul>
+          <p class="deliverable"><strong>Typical deliverables</strong>An annotated draft, ranked weaknesses, and a revision plan.</p>
+          <a class="text-link" href="mailto:advisory@gillist.com?subject=Proposal%20or%20program%20review">Discuss a review <span aria-hidden="true">↗</span></a>
         </article>
-        <article class="card">
-          <div class="card-index">03</div>
-          <h3>Cognitive Labs</h3>
-          <p>
-            Careful experiments on model behavior, adversarial prompting, anomaly
-            analysis, and human-AI cognitive resilience.
-          </p>
+        <article class="card service-card">
+          <div class="card-index">ADVISE</div>
+          <h3>Technology &amp; international partnerships</h3>
+          <p>Understand the institutions, incentives, and geopolitical context behind a proposed partnership. Assess how commitments translate into delivery.</p>
+          <ul class="service-details">
+            <li>Stakeholder and incentive analysis</li>
+            <li>Concept notes and donor partnerships</li>
+            <li>Institutional and regional context</li>
+          </ul>
+          <p class="deliverable"><strong>Typical deliverables</strong>A decision brief, partnership assessment, or concept review.</p>
+          <a class="text-link" href="mailto:advisory@gillist.com?subject=Technology%20partnership%20inquiry">Discuss a partnership <span aria-hidden="true">↗</span></a>
         </article>
       </div>
     </section>
 
-    <section id="approach" class="section section-alt">
+    <section id="experience" class="section section-alt" aria-labelledby="experience-title">
+      <div class="section-head">
+        <p class="eyebrow">02 / Experience</p>
+        <h2 id="experience-title">From the concept to the institution.</h2>
+      </div>
+      <article class="split case-study" aria-labelledby="tekwill-title">
+        <div class="case-intro">
+          <p class="case-label">Selected work · Moldova</p>
+          <h3 id="tekwill-title" class="case-title">Tekwill</h3>
+          <p class="case-subtitle serif-accent">Cooperation, built into the design.</p>
+          <p>As USAID's Moldova Desk Officer, Thomas helped shape the concept and international partnerships behind Moldova's ICT Center of Excellence.</p>
+          <p>His contribution spanned substantial concept-note development, donor coordination, corporate engagement, and support through implementation.</p>
+          <div class="source-links">
+            <a class="text-link" href="https://ict.md/projects/tekwill/">ATIC project record <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://tekwill.md/">Visit Tekwill <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <ul class="principles case-principles">
+          <li><strong>Bring the right participants together</strong><span>Work across USAID, donor governments, and corporate partners, including engagement with Microsoft and IBM.</span></li>
+          <li><strong>Make resources go further</strong><span>Develop complementary donor commitments and combine financial support with the credibility and capabilities of technology partners.</span></li>
+          <li><strong>Protect the people creating value</strong><span>Help shape an approach emphasizing non-dilutive support and creator ownership as part of the project's design.</span></li>
+        </ul>
+      </article>
+      <p class="case-context">Tekwill was implemented by ATIC in partnership with the Technical University of Moldova, with support from USAID and Sweden.</p>
+    </section>
+
+    <section class="section profile-section" aria-labelledby="profile-title">
+      <div class="profile-grid">
+        <div>
+          <p class="eyebrow">The practitioner</p>
+          <h2 id="profile-title">Thomas A. Gillis</h2>
+          <p class="lede-sm">Diplomacy, program delivery, and hands-on AI development.</p>
+          <p class="profile-summary">Former USAID Management &amp; Program Analyst and Moldova Desk Officer, with a political-officer detail at U.S. Embassy Moscow. Experience includes senior briefings, human-rights reporting, and international technology partnerships.</p>
+        </div>
+        <dl class="experience-list">
+          <div><dt>Procurement &amp; evaluation</dt><dd>RFP development, Technical Evaluation Committee participation, and work across grants, contracts, and awards.</dd></div>
+          <div><dt>Program delivery</dt><dd>Multimillion-dollar projects, donor coordination, and support from design through implementation and monitoring and evaluation.</dd></div>
+          <div><dt>AI practice</dt><dd>AI-assisted software, interactive tools, and reusable workflows. Cross-model work with Claude, OpenAI, Grok, and Gemini; open-model experimentation through Hugging Face, model modification, and multi-model orchestration.</dd></div>
+          <div><dt>Research foundation</dt><dd>M.A. in International Relations &amp; European Studies, Central European University; Presidential Management Fellowship; Russian-language capability.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="approach" class="section section-alt" aria-labelledby="approach-title">
       <div class="split">
         <div>
-          <h2>How we work</h2>
-          <p class="lede-sm">
-            Small surface area. High signal. No unnecessary process.
-          </p>
+          <p class="eyebrow">03 / Approach</p>
+          <h2 id="approach-title">Work with clear boundaries.</h2>
+          <p class="lede-sm">Remote, project-based engagements centered on a defined outcome: a working tool, a tested workflow, or a useful written assessment.</p>
         </div>
-        <ul class="principles">
-          <li>
-            <strong>Discretion first</strong>
-            <span>Client matters stay confidential by default.</span>
-          </li>
-          <li>
-            <strong>Substance over spectacle</strong>
-            <span>Recommendations you can implement—not slideware.</span>
-          </li>
-          <li>
-            <strong>Context aware</strong>
-            <span>Every engagement respects operational and human constraints.</span>
-          </li>
-          <li>
-            <strong>Long horizon</strong>
-            <span>Prefer durable capability over short-lived novelty.</span>
-          </li>
-        </ul>
+        <ol class="principles approach-steps">
+          <li><strong><span class="step-number" aria-hidden="true">01</span> Define the question</strong><span>Agree on the objective, materials, scope, fee, and timing before work begins.</span></li>
+          <li><strong><span class="step-number" aria-hidden="true">02</span> Examine the evidence</strong><span>Use explicit criteria, test assumptions, and distinguish findings from interpretation.</span></li>
+          <li><strong><span class="step-number" aria-hidden="true">03</span> Deliver work you can use</strong><span>Document what was built or evaluated, explain the findings and limitations, and identify practical next steps. Coordinate primarily in writing.</span></li>
+        </ol>
       </div>
     </section>
 
-    <section class="section band">
-      <blockquote>
-        <p>
-          “We help teams see clearly when tools, incentives, and information
-          move faster than the institutions around them.”
-        </p>
-        <footer>— GillisT Enterprises</footer>
-      </blockquote>
+    <section id="publications" class="section publications-section" aria-labelledby="publications-title">
+      <div class="section-head">
+        <p class="eyebrow">Selected publications</p>
+        <h2 id="publications-title">Aid, institutions, and outcomes.</h2>
+      </div>
+      <div class="publication-list">
+        <article class="publication">
+          <p class="publication-year">2017</p>
+          <div><h3>Getting our Money's Worth: The Impact of U.S. Aid on Democratization in Ukraine</h3><p>Published contribution · Cold War History Research Center, Budapest · pp. 447–457</p></div>
+        </article>
+        <article class="publication">
+          <p class="publication-year">2013</p>
+          <div><h3>Foreign Aid and Democratization: The Impact of Western Assistance on the Orange Revolution</h3><p>Master's thesis · Central European University</p></div>
+        </article>
+      </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section" aria-labelledby="contact-title">
       <div class="contact-panel">
         <div>
-          <h2>Contact</h2>
-          <p>
-            For inquiries, introductions, or carefully scoped engagements,
-            reach out by email. We respond when a fit is genuine.
-          </p>
+          <p class="eyebrow">Start with the question</p>
+          <h2 id="contact-title">What needs a closer look?</h2>
+          <p>Send the objective, the material or system to review, and your preferred timeframe. Scope and availability are agreed individually.</p>
         </div>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:inquiries@gillist.com">inquiries@gillist.com</a>
+          <a class="btn btn-primary" href={inquiry}>inquiries@gillist.com</a>
           <div class="contact-routes" aria-label="Specialized contact addresses">
-            <a href="mailto:advisory@gillist.com">Advisory</a>
-            <span aria-hidden="true">·</span>
-            <a href="mailto:research@gillist.com">Research</a>
+            <a href="mailto:advisory@gillist.com">Advisory</a><span aria-hidden="true">·</span><a href="mailto:research@gillist.com">AI evaluation &amp; research</a>
           </div>
-          <p class="fine">
-            United States · Remote engagements · Carefully scoped work
-          </p>
+          <p class="fine">United States · Remote engagements</p>
         </div>
       </div>
     </section>
@@ -160,19 +206,9 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="footer-brand">
-        <span class="brand-text muted">GillisT Enterprises</span>
-        <a class="quiet-link" href="/anchor/" aria-label="Open a quiet mindfulness exercise" title="A quiet pause">◌</a>
-      </span>
-      <span class="footer-notes muted">
-        <span>No tracking scripts · No forms · No cookies</span>
-        <span>© <span id="y"></span> All rights reserved.</span>
-      </span>
+      <span class="footer-brand"><span class="brand-text muted">GillisT Enterprises</span><a class="quiet-link" href="/anchor/" aria-label="Open a quiet mindfulness exercise" title="A quiet pause">◌</a></span>
+      <span class="footer-notes muted"><span>No tracking scripts · No forms · No cookies</span><span>© {year} GillisT Enterprises</span></span>
     </div>
   </footer>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
